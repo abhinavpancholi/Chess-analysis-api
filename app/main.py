@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from app.database import create_tables
+import app.models  # noqa: F401
 
 
 @asynccontextmanager
