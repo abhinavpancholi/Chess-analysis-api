@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from app.database import create_tables
+from app.routers import auth
 import app.models  # noqa: F401
 
 
@@ -12,7 +13,9 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Chess Analysis API", lifespan=lifespan)
 
+app.include_router(auth.router)
+
 
 @app.get("/health")
 async def health_check():
-    return {"title": "Chess Analysis API","status": "ok"}
+    return {"status": "ok"}
