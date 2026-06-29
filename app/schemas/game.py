@@ -4,8 +4,8 @@ from typing import Optional
 
 
 class IngestRequest(BaseModel):
-    year: int
-    month: int
+    year: Optional[int] = None
+    month: Optional[int] = None
 
 
 class IngestResponse(BaseModel):
