@@ -25,6 +25,7 @@ async def register(payload: UserRegister, db: AsyncSession = Depends(get_db)):
     user = User(
         email=payload.email,
         hashed_password=hash_password(payload.password),
+        chess_username = payload.chess_username
     )
     db.add(user)
     await db.flush()
