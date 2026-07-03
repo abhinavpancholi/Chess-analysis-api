@@ -1,0 +1,49 @@
+:root {
+  /* Color — inspired by an aged wooden board and brass clock fittings,
+     not a felt board: warmer, darker, more material than a generic cream+terracotta look. */
+  --bg: #FAF5E8;            /* warm parchment page background */
+  --surface: #FFFFFF;       /* cards */
+  --surface-tint: #F0E6D2;  /* light board-square tone, used for alternating rows */
+  --surface-tint-strong: #E7D9BC;
+
+  --ink: #241A10;           /* near-black walnut, primary text */
+  --ink-muted: #6E6152;     /* secondary text */
+  --ink-faint: #A79C89;     /* placeholder / disabled */
+
+  --board-dark: #4A3222;    /* dark square walnut — used for high-emphasis surfaces */
+  --hairline: #DCCFAE;      /* dividers, borders */
+
+  --brass: #A97F3F;         /* accent — wins, positive deltas, primary actions */
+  --brass-strong: #8E6A34;
+  --oxblood: #7A2E2E;       /* losses, negative deltas */
+  --slate-draw: #6B6459;    /* draws, neutral */
+
+  --success-bg: #ECE3CD;
+  --danger-bg: #F1E1DD;
+
+  /* Type */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+
+  /* Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+
+  /* Layout */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --shadow-card: 0 1px 2px rgba(36, 26, 16, 0.06), 0 4px 16px rgba(36, 26, 16, 0.05);
+}
