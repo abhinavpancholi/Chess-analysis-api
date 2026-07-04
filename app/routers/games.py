@@ -11,7 +11,7 @@ from app.models.user import User
 from app.models.game import Game, IngestionJob
 from app.schemas.game import (
     IngestRequest, IngestResponse,
-    JobStatusResponse, GameResponse
+    JobStatusResponse, GameResponse, GameDetail
 )
 from app.services import chess_com, pgn_parser
 
@@ -187,3 +187,18 @@ async def list_games(
         .offset(offset)
     )
     return result.scalars().all()
+
+
+@router.get("/{game_id}", response_model=GameDetail)
+async def get_game_detail(
+    game_id: int,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    result = await db.execute(
+        select(Game).where(Game.id == game_id, Game.user_id == current_user.id)
+    )
+    game = result.scalar_one_or_none()
+    if game is None:
+        raise HTTPException(status_code=404, detail="Game not found")
+    return game

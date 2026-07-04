@@ -43,3 +43,6 @@ class GameResponse(BaseModel):
     accuracy: Optional[float]
 
     model_config = ConfigDict(from_attributes=True)
+
+class GameDetail(GameResponse):
+    pgn: Optional[str] = None
